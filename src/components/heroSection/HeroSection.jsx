@@ -13,7 +13,7 @@ function HeroSection() {
         <p className="hero-p signika-200-font">Ready to Connect? Fill out this form and discover our amazing community</p>
       </div>
       <div className="hero-image">
-        <img src="/background.jpg" alt="Hero Background" />
+        <img src="/background.jpg" alt="Hero Background" loading="lazy"/>
       </div>
     </section>
   );
