@@ -1,0 +1,119 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .signika-500-font {
+    font-family: "Signika", serif;
+    font-weight: 500;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar-logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-links li {
+    margin: 0 2rem;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    color: #f39c12;
+  }
+  
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .navbar-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(15px);
+  }
+  
+  .navbar-menu.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-15px);
+  }
+  
+  /* Mobile Screen Styling */
+  @media (max-width: 768px) {
+    .navbar{
+        padding: 1rem 1rem;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #333031;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  
+    .navbar-links.show {
+      display: flex;
+    }
+  
+    .navbar-links li {
+      margin: 1rem 0;
+    }
+  
+    .navbar-menu {
+      display: flex;
+      
+    }
+  }
+
+  /* Tablet Screen Styling */
+  @media (min-width: 769px) and (max-width: 921px) {
+    .navbar-logo p {
+        width: 32vw;
+      }
+    .navbar-links li {
+      margin: 0 1.5rem; 
+      text-align: center; 
+    }
+    .navbar-menu {
+      display: none; 
+    }
+  }
+  
