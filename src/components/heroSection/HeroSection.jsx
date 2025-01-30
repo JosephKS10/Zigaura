@@ -74,7 +74,7 @@ function HeroSection() {
       };
   
       try {
-          const response = await fetch("https://script.google.com/macros/s/AKfycbyjUnKBub2IuiiU3_Gw1Znw9r6_kLv2uXtB-mFvgdH-kP5_Xt-Ju5YX41ew8nqDRMOA/exec", {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbxO6zTlwKHIKjgBwPTCZQ2VpIdzEFqE_5Ud3rSqVe045a7aREP7W78slX5q8CcLvXPw_g/exec", {
           method: "POST",
           mode: "no-cors", 
           headers: {
@@ -82,7 +82,7 @@ function HeroSection() {
           },
           body: JSON.stringify(formData),
         });
-  
+        console.log(response);
         setIsSubmitting(false);
         setShowSuccessMessage(true);
   
