@@ -51,33 +51,51 @@ function HeroSection() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     let validationErrors = {};
-
+  
     if (!referralName.trim()) validationErrors.referralName = "Referral name is required.";
     if (contactNumber.length !== 10) validationErrors.contactNumber = "Please enter a valid 10-digit phone number.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) validationErrors.email = "Please enter a valid email address.";
     if (!selectedRole) validationErrors.selectedRole = "Please select either Artist or Host.";
-
+  
     setErrors(validationErrors);
-
+  
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitting(true);
-
-      // Simulate API call delay
-      setTimeout(() => {
+  
+      const formData = {
+        referralName,
+        contactNumber,
+        email,
+        selectedRole,
+      };
+  
+      try {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbyjUnKBub2IuiiU3_Gw1Znw9r6_kLv2uXtB-mFvgdH-kP5_Xt-Ju5YX41ew8nqDRMOA/exec", {
+          method: "POST",
+          mode: "no-cors", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+  
         setIsSubmitting(false);
         setShowSuccessMessage(true);
-
-        // Auto-close popup after 3 seconds
+  
         setTimeout(() => {
           handleClose();
         }, 3000);
-      }, 2000);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setIsSubmitting(false);
+      }
     }
   };
+  
 
   const handleClose = () => {
     setIsOpen(false);

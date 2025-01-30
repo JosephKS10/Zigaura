@@ -14,6 +14,15 @@
     font-family: "Signika", serif;
     font-weight: 500;
   }
+  .left-nav{
+    display: flex;
+    align-items: center;
+  }
+  .logo-image{
+    width: 70px;
+    height: 65px;
+    margin-right: 0.2rem;
+  }
   
   .navbar-logo {
     display: flex;
