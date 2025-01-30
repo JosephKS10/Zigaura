@@ -3,13 +3,13 @@ import "./AboutUs.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const AboutUs = () => {
+const AboutUs = ({ aboutRef }) => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
       }, []);
 
   return (
-    <section className="about-us">
+    <section ref={aboutRef} className="about-us">
       <div className="about-container">
         <h2 className="about-title" data-aos="fade-up">About <span className="highlight">Zigaura</span></h2>
 
